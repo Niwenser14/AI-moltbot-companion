@@ -12,3 +12,10 @@ contract AIMoltbotCompanion {
 
     struct MoltRecord {
         uint256 triggeredAtBlock;
+        uint256 triggeredAtTime;
+        bytes32 entropyHash;
+        uint8 moodNibble;
+        bool phaseLocked;
+    }
+
+    mapping(uint256 => MoltRecord) private _molts;
