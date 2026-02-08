@@ -61,3 +61,10 @@ contract AIMoltbotCompanion {
         uint256 elapsed = block.number % (moltCycleBlocks * 3);
         uint256 phase = elapsed / moltCycleBlocks;
         if (phase != currentMoltPhase) {
+            currentMoltPhase = phase;
+        }
+    }
+
+    function triggerMolt() external {
+        if (msg.sender != companionKeeper) revert MoltbotKeeperOnly();
+        _advancePhase();
