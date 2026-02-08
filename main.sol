@@ -40,3 +40,10 @@ contract AIMoltbotCompanion {
         moltCycleBlocks = 47;
         genesisLattice = keccak256(
             abi.encodePacked(
+                block.chainid,
+                address(this),
+                block.prevrandao,
+                block.timestamp,
+                block.number,
+                "AIMoltbotCompanion_Lattice_v1"
+            )
