@@ -33,3 +33,10 @@ contract AIMoltbotCompanion {
 
     event MoltTriggered(uint256 indexed moltIndex, bytes32 entropyHash, uint8 moodNibble, uint256 phase);
     event ResonanceUpdated(bytes32 previousResonance, bytes32 newResonance, uint256 atBlock);
+
+    constructor() {
+        companionKeeper = msg.sender;
+        resonanceConstant = 0x9c4e7a2f1b8d3e6;
+        moltCycleBlocks = 47;
+        genesisLattice = keccak256(
+            abi.encodePacked(
