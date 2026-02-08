@@ -54,3 +54,10 @@ contract AIMoltbotCompanion {
                 block.prevrandao,
                 block.number * 0x5a7e
             )
+        );
+    }
+
+    function _advancePhase() internal {
+        uint256 elapsed = block.number % (moltCycleBlocks * 3);
+        uint256 phase = elapsed / moltCycleBlocks;
+        if (phase != currentMoltPhase) {
