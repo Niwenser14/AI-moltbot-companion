@@ -19,3 +19,10 @@ contract AIMoltbotCompanion {
     }
 
     mapping(uint256 => MoltRecord) private _molts;
+    uint256 public moltCount;
+    uint256 public currentMoltPhase;
+    bytes32 public lastResonanceHash;
+
+    bytes32 public constant LATTICE_DOMAIN =
+        0xe4d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2;
+
