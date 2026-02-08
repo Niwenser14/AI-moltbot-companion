@@ -47,3 +47,10 @@ contract AIMoltbotCompanion {
                 block.number,
                 "AIMoltbotCompanion_Lattice_v1"
             )
+        );
+        companionCoreSeed = keccak256(
+            abi.encodePacked(
+                genesisLattice,
+                block.prevrandao,
+                block.number * 0x5a7e
+            )
