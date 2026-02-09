@@ -138,3 +138,10 @@ contract AIMoltbotCompanion {
             )
         );
     }
+
+    function getCompanionState()
+        external
+        view
+        returns (
+            uint256 totalMolts,
+            uint256 phase,
