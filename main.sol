@@ -145,3 +145,10 @@ contract AIMoltbotCompanion {
         returns (
             uint256 totalMolts,
             uint256 phase,
+            bytes32 resonance,
+            bytes32 coreSeed
+        )
+    {
+        return (moltCount, currentMoltPhase, lastResonanceHash, companionCoreSeed);
+    }
+}
