@@ -152,3 +152,4 @@ contract AIMoltbotCompanion {
         return (moltCount, currentMoltPhase, lastResonanceHash, companionCoreSeed);
     }
 }
+
