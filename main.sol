@@ -96,3 +96,10 @@ contract AIMoltbotCompanion {
                 prevResonance,
                 ent,
                 LATTICE_DOMAIN,
+                block.number
+            )
+        );
+        emit MoltTriggered(idx, ent, mood, currentMoltPhase);
+        emit ResonanceUpdated(prevResonance, lastResonanceHash, block.number);
+    }
+
