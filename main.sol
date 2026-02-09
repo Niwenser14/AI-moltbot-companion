@@ -117,3 +117,10 @@ contract AIMoltbotCompanion {
         if (moltIndex >= moltCount) revert MoltbotInvalidMoltIndex();
         MoltRecord storage r = _molts[moltIndex];
         return (
+            r.triggeredAtBlock,
+            r.triggeredAtTime,
+            r.entropyHash,
+            r.moodNibble,
+            r.phaseLocked
+        );
+    }
