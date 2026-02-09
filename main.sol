@@ -82,3 +82,10 @@ contract AIMoltbotCompanion {
         uint8 mood = uint8(uint256(ent) % 16);
 
         _molts[idx] = MoltRecord({
+            triggeredAtBlock: block.number,
+            triggeredAtTime: block.timestamp,
+            entropyHash: ent,
+            moodNibble: mood,
+            phaseLocked: true
+        });
+        moltCount += 1;
