@@ -103,3 +103,10 @@ contract AIMoltbotCompanion {
         emit ResonanceUpdated(prevResonance, lastResonanceHash, block.number);
     }
 
+    function getMolt(uint256 moltIndex)
+        external
+        view
+        returns (
+            uint256 triggeredAtBlock,
+            uint256 triggeredAtTime,
+            bytes32 entropyHash,
