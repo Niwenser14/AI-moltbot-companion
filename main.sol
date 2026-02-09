@@ -124,3 +124,10 @@ contract AIMoltbotCompanion {
             r.phaseLocked
         );
     }
+
+    function deriveResponseHash(uint256 moltIndex, bytes32 queryHash) external view returns (bytes32) {
+        if (moltIndex >= moltCount) revert MoltbotInvalidMoltIndex();
+        MoltRecord storage r = _molts[moltIndex];
+        return keccak256(
+            abi.encodePacked(
+                r.entropyHash,
