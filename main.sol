@@ -89,3 +89,10 @@ contract AIMoltbotCompanion {
             phaseLocked: true
         });
         moltCount += 1;
+
+        bytes32 prevResonance = lastResonanceHash;
+        lastResonanceHash = keccak256(
+            abi.encodePacked(
+                prevResonance,
+                ent,
+                LATTICE_DOMAIN,
