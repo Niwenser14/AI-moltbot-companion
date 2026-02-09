@@ -68,3 +68,10 @@ contract AIMoltbotCompanion {
     function triggerMolt() external {
         if (msg.sender != companionKeeper) revert MoltbotKeeperOnly();
         _advancePhase();
+
+        uint256 idx = moltCount;
+        bytes32 ent = keccak256(
+            abi.encodePacked(
+                companionCoreSeed,
+                block.prevrandao,
+                block.timestamp,
