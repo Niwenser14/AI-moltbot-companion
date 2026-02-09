@@ -75,3 +75,10 @@ contract AIMoltbotCompanion {
                 companionCoreSeed,
                 block.prevrandao,
                 block.timestamp,
+                idx,
+                currentMoltPhase
+            )
+        );
+        uint8 mood = uint8(uint256(ent) % 16);
+
+        _molts[idx] = MoltRecord({
