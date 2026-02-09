@@ -131,3 +131,10 @@ contract AIMoltbotCompanion {
         return keccak256(
             abi.encodePacked(
                 r.entropyHash,
+                queryHash,
+                companionCoreSeed,
+                lastResonanceHash,
+                block.chainid
+            )
+        );
+    }
