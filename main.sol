@@ -110,3 +110,10 @@ contract AIMoltbotCompanion {
             uint256 triggeredAtBlock,
             uint256 triggeredAtTime,
             bytes32 entropyHash,
+            uint8 moodNibble,
+            bool phaseLocked
+        )
+    {
+        if (moltIndex >= moltCount) revert MoltbotInvalidMoltIndex();
+        MoltRecord storage r = _molts[moltIndex];
+        return (
